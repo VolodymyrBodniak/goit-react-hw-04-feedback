@@ -1,19 +1,17 @@
 import css from './FeedbackOptions.module.css';
-import setData from 'components/Utils/utils';
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  const buttonsNames = setData(options);
+export const FeedbackOptions = ({ options, handleChangeValue }) => {
   return (
     <>
       <div className={css.buttons}>
-        {buttonsNames.map(buttonItem => {
+        {options.map(buttonItem => {
           return (
             <button
               key={buttonItem}
               type="button"
               className={css.btn}
               data-name={buttonItem}
-              onClick={onLeaveFeedback}
+              onClick={handleChangeValue}
             >
               {buttonItem}
             </button>
